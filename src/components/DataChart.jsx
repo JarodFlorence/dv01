@@ -12,7 +12,7 @@ const DataChart = () => {
       height={300}
       data={grades.map((item) => ({
         name: `Grade ${item.grade}`,
-        total: Number(item.total).toFixed(2),
+        total: item.total,
       }))}
     >
       <CartesianGrid strokeDasharray="3 3" />
@@ -24,7 +24,7 @@ const DataChart = () => {
       />
       <Tooltip
         itemStyle={{ fontSize: 13, textTransform: "capitalize" }}
-        formatter={(val) => `$${numberWithCommas(val)}`}
+        formatter={(val) => `$${numberWithCommas(Number(val).toFixed(2))}`}
       />
       <Bar dataKey="total" fill="#3e63dd" />
     </BarChart>

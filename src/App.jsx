@@ -2,7 +2,7 @@ import { useEffect } from "react";
 
 import { getData } from "./request/api";
 import { useDataStore } from "./hooks";
-import { DataChart, DataTable } from "./components";
+import { DataChart, DataTable, DataFilter } from "./components";
 
 function App() {
   const setData = useDataStore((state) => state.setData);
@@ -21,6 +21,7 @@ function App() {
     <div className="flex flex-1 flex-col min-h-screen justify-center items-center gap-10">
       <DataTable />
       <DataChart />
+      <DataFilter />
     </div>
   );
 }
