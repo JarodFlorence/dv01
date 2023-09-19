@@ -2,6 +2,7 @@ import { useEffect } from "react";
 
 import { getData } from "./request/api";
 import { useDataStore } from "./hooks";
+import { DataTable } from "./components";
 
 function App() {
   const setData = useDataStore((state) => state.setData);
@@ -17,8 +18,8 @@ function App() {
   };
 
   return (
-    <div className="flex flex-1 justify-center items-center">
-      <h1 className="text-3xl font-bold underline">Hello world!</h1>
+    <div className="flex flex-1 min-h-screen justify-center items-center">
+      <DataTable />
     </div>
   );
 }
