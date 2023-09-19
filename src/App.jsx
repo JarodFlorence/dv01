@@ -1,15 +1,19 @@
 import { useEffect } from "react";
 
 import { getData } from "./request/api";
+import { useDataStore } from "./hooks";
 
 function App() {
+  const setData = useDataStore((state) => state.setData);
+
   useEffect(() => {
     fetchData();
   }, []);
 
+  // fetch and set data to the store
   const fetchData = async () => {
-    const res = await getData();
-    console.log(res);
+    const data = await getData();
+    setData(data || []);
   };
 
   return (
